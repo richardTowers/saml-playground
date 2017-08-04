@@ -1,0 +1,24 @@
+{
+  "name": "saml-playground",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "jspm": "^0.16.53"
+  },
+  "jspm": {
+    "directories": {
+      "baseURL": "public"
+    },
+    "dependencies": {
+      "codemirror": "npm:codemirror@^5.28.0",
+      "xml-crypto": "npm:xml-crypto@^0.10.1",
+      "xmldom": "npm:xmldom@^0.1.27"
+    },
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.8.24",
+      "babel-runtime": "npm:babel-runtime@^5.8.24",
+      "core-js": "npm:core-js@^1.1.4"
+    }
+  }
+}
