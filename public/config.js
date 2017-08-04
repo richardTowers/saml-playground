@@ -19,7 +19,7 @@ System.config({
     "code-mirror": "npm:code-mirror@4.0.1",
     "codemirror": "npm:codemirror@5.28.0",
     "core-js": "npm:core-js@1.2.7",
-    "xml-crypto": "npm:xml-crypto@0.10.1",
+    "xml-crypto": "npm:xml-crypto@0.9.0",
     "xmldom": "npm:xmldom@0.1.27",
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.4.1"
@@ -516,7 +516,7 @@ System.config({
     "npm:vm-browserify@0.0.4": {
       "indexof": "npm:indexof@0.0.1"
     },
-    "npm:xml-crypto@0.10.1": {
+    "npm:xml-crypto@0.9.0": {
       "crypto": "github:jspm/nodelibs-crypto@0.1.0",
       "fs": "github:jspm/nodelibs-fs@0.1.2",
       "process": "github:jspm/nodelibs-process@0.1.2",

@@ -11,9 +11,9 @@
       "baseURL": "public"
     },
     "dependencies": {
-      "codemirror": "npm:codemirror@^5.28.0",
-      "xml-crypto": "npm:xml-crypto@^0.10.1",
-      "xmldom": "npm:xmldom@^0.1.27"
+      "codemirror": "npm:codemirror@5.28.0",
+      "xml-crypto": "npm:xml-crypto@0.9.0",
+      "xmldom": "npm:xmldom@0.1.27"
     },
     "devDependencies": {
       "babel": "npm:babel-core@^5.8.24",
