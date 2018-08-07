@@ -6,9 +6,12 @@
   "dependencies": {
     "jspm": "^0.16.53"
   },
+  "scripts": {
+    "build": "npm install && jspm install && jspm bundle-sfx index"
+  },
   "jspm": {
     "directories": {
-      "baseURL": "public"
+      "baseURL": "docs"
     },
     "dependencies": {
       "codemirror": "npm:codemirror@5.28.0",
