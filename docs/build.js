@@ -35053,10 +35053,12 @@ $__System.registerDynamic("e1", ["e0"], true, function ($__require, exports, mod
 $__System.register('1', ['2', '5', 'da', 'e1'], function (_export) {
   'use strict';
 
-  var codeMirror, xml, SignedXml, xpath, DOMParser, textArea, status, editor, cert;
+  var codeMirror, xml, SignedXml, xpath, DOMParser, textArea, certArea, status, editor, certEditor;
 
   function validate(instance) {
     var extraSecurity = document.location.search === '?extra-secure';
+    var cert = certEditor.getValue();
+    console.log(cert);
     var res = false;
     try {
       var _xml = instance.getValue();
@@ -35108,11 +35110,15 @@ $__System.register('1', ['2', '5', 'da', 'e1'], function (_export) {
     }],
     execute: function () {
       textArea = document.getElementById('target-text-area');
+      certArea = document.getElementById('cert-text-area');
       status = document.getElementById('status');
       editor = codeMirror.fromTextArea(textArea, { lineWrapping: true, mode: 'xml', theme: 'monokai', viewportMargin: Infinity });
-      cert = '-----BEGIN CERTIFICATE-----\nMIIEFzCCAv+gAwIBAgIUFJsUjPM7AmWvNtEvULSHlTTMiLQwDQYJKoZIhvcNAQEFBQAwWDELMAkGA1UEBhMCVVMxETAPBgNVBAoMCFN1YnNwYWNlMRUwEwYDVQQLDAxPbmVMb2dpbiBJZFAxHzAdBgNVBAMMFk9uZUxvZ2luIEFjY291bnQgNDIzNDkwHhcNMTQwNTEzMTgwNjEyWhcNMTkwNTE0MTgwNjEyWjBYMQswCQYDVQQGEwJVUzERMA8GA1UECgwIU3Vic3BhY2UxFTATBgNVBAsMDE9uZUxvZ2luIElkUDEfMB0GA1UEAwwWT25lTG9naW4gQWNjb3VudCA0MjM0OTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKrAzJdY9FzFLt5blArJfPzgi87EnFGlTfcV5T1TUDwLBlDkY/0ZGKnMOpf3D7ie2C4pPFOImOogcM5kpDDL7qxTXZ1ewXVyjBdMu29NG2C6NzWeQTUMUji01EcHkC8o+Pts8ANiNOYcjxEeyhEyzJKgEizblYzMMKzdrOET6QuqWo3C83K+5+5dsjDn1ooKGRwj3HvgsYcFrQl9NojgQFjoobwsiE/7A+OJhLpBcy/nSVgnoJaMfrO+JsnukZPztbntLvOl56+Vra0N8n5NAYhaSayPiv/ayhjVgjfXd1tjMVTOiDknUOwizZuJ1Y3QH94vUtBgp0WBpBSs/xMyTs8CAwEAAaOB2DCB1TAMBgNVHRMBAf8EAjAAMB0GA1UdDgQWBBRQO4WpM5fWwxib49WTuJkfYDbxODCBlQYDVR0jBIGNMIGKgBRQO4WpM5fWwxib49WTuJkfYDbxOKFcpFowWDELMAkGA1UEBhMCVVMxETAPBgNVBAoMCFN1YnNwYWNlMRUwEwYDVQQLDAxPbmVMb2dpbiBJZFAxHzAdBgNVBAMMFk9uZUxvZ2luIEFjY291bnQgNDIzNDmCFBSbFIzzOwJlrzbRL1C0h5U0zIi0MA4GA1UdDwEB/wQEAwIHgDANBgkqhkiG9w0BAQUFAAOCAQEACdDAAoaZFCEY5pmfwbKuKrXtO5iE8lWtiCPjCZEUuT6bXRNcqrdnuV/EAfX9WQoXjalPi0eM78zKmbvRGSTUHwWw49RHjFfeJUKvHNeNnFgTXDjEPNhMvh69kHm453lFRmB+kk6yjtXRZaQEwS8Uuo2Ot+krgNbl6oTBZJ0AHH1MtZECDloms1Km7zsK8wAi5i8TVIKkVr5b2VlhrLgFMvzZ5ViAxIMGB6w47yY4QGQB/5Q8ya9hBs9vkn+wubA+yr4j14JXZ7blVKDSTYva65Ea+PqHyrp+Wnmnbw2ObS7iWexiTy1jD3G0R2avDBFjM8Fj5DbfufsE1b0U10RTtg==\n-----END CERTIFICATE-----\n';
+      certEditor = codeMirror.fromTextArea(certArea, { lineWrapping: true, mode: 'xml', theme: 'monokai', viewportMargin: Infinity });
       validate(editor);
       editor.on('change', validate);
+      certEditor.on('change', function (certEditor) {
+        validate(editor);
+      });
     }
   };
 });
