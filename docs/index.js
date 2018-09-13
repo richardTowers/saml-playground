@@ -44,6 +44,8 @@ function validate(instance) {
   document.body.className = res ? 'valid-saml' : 'invalid-saml'
 }
 
+// TEst
+
 validate(editor)
 editor.on('change', validate)
 certEditor.on('change', certEditor => { validate(editor) })
